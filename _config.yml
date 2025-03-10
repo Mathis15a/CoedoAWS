@@ -31,6 +31,8 @@ github_username:  "" # a voir plus tard
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+  
 
 paginate: 0
 
