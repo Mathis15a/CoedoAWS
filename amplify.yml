@@ -13,4 +13,9 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - vendor/bundle
+      - node_modules/**/*
+      - vendor/**/*
+      - _site/**/*
+      - _config.yml
+      - Gemfile
+      - Gemfile.lock
