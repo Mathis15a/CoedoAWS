@@ -1,0 +1,1496 @@
+/* Variables CSS pour la typographie */
+:root {
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-base: 1rem;
+    /* 16px */
+    --font-size-lg: 1.125rem;
+    /* 18px */
+    --font-size-xl: 1.25rem;
+    /* 20px */
+    --font-size-2xl: 1.5rem;
+    /* 24px */
+    --font-size-3xl: 2rem;
+    /* 32px */
+    --font-size-4xl: 3rem;
+    /* 48px */
+    --font-size-5xl: 4rem;
+    /* 64px */
+    --line-height-base: 1.6;
+    --line-height-tight: 1.2;
+}
+
+/* Navbar Fixe */
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99999;
+    background-color: #043873;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-fixed.scrolled {
+    background-color: rgba(4, 56, 115, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+}
+
+.navbar .btn {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    color: white !important;
+    /* Le texte reste blanc */
+    text-decoration: none;
+    /* Pas de soulignement par défaut */
+    padding: 10px;
+    /* Maintient un espacement confortable autour des textes */
+    display: inline-flex;
+    /* Permet un alignement interne flexible */
+    align-items: center;
+    /* Aligne verticalement le texte */
+    justify-content: center;
+    /* Centre le texte horizontalement */
+    position: relative;
+    /* Nécessaire pour le positionnement du soulignement */
+    overflow: hidden;
+    /* Assure que les éléments internes ne débordent pas */
+    transition: color 0.3s ease;
+    /* Animation fluide */
+    line-height: var(--line-height-base);
+}
+
+/* Soulignement limité au texte */
+.navbar .link-btn::after {
+    content: '';
+    /* Ajoute un élément après le texte */
+    display: block;
+    /* Affiche le soulignement comme un bloc */
+    position: absolute;
+    /* Positionné par rapport au texte */
+    bottom: 0;
+    /* Aligne le soulignement en bas du texte */
+    left: 0;
+    /* Commence exactement à gauche du texte */
+    width: 0;
+    /* Largeur initiale, n'inclut pas le padding */
+    height: 2px;
+    /* Épaisseur du trait */
+    background-color: #4F9CF9;
+    /* Couleur du soulignement */
+    transition: width 0.3s ease;
+    /* Animation fluide pour le soulignement */
+    z-index: 1;
+    /* Assure que le soulignement est visible */
+}
+
+/* Animation au survol */
+.navbar .link-btn:hover::after {
+    width: 100%;
+    /* Le trait s'étend uniquement sur la largeur du texte */
+}
+
+/* Conserve la couleur du texte au survol */
+.navbar .link-btn:hover {
+    color: white !important;
+    /* Pas de changement de couleur */
+}
+
+/* Bouton spécial pour "Prendre rendez-vous" */
+.navbar .special-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    background-color: white;
+    border-radius: 8px;
+    color: #043873 !important;
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    line-height: var(--line-height-base);
+}
+
+.navbar .special-btn:hover {
+    background-color: #4F9CF9;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+/* Supprime le soulignement pour "Prendre rendez-vous" */
+.navbar .special-btn::after {
+    content: none;
+    /* Aucun soulignement */
+}
+
+/* Header */
+.header-section {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 99999;
+}
+
+.header-section .header-logo img {
+    max-width: 120px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #043873;
+    min-height: 100vh;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../custom-assets/waves.webp');
+    background-size: cover;
+    background-position: center;
+    padding-top: 80px;
+}
+
+.container-fluid .row .col-lg-6 {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: var(--font-size-5xl);
+    line-height: var(--line-height-tight);
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-base);
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    background-color: white;
+    color: #043873;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    font-size: var(--font-size-lg);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    transform: scale(1.1);
+    background-color: #4F9CF9;
+    color: white;
+}
+
+/* Hero Section pour les mentions légales */
+.hero-mentions {
+    min-height: 40vh;
+    padding: 2rem 0;
+}
+
+.hero-mentions h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-mentions p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+
+    /* Ajustements généraux pour la section hero */
+    .hero {
+        padding: 80px 0;
+        min-height: auto;
+    }
+
+    /* Ajustement du conteneur pour éviter les débordements */
+    .container-fluid .row .col-lg-6 {
+        padding: 0 1rem;
+    }
+
+    /* Adaptation de la taille du titre */
+    .hero h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+
+    /* Forcer le conteneur des phrases rotatives à occuper 100% de la largeur, être centré et ne pas se casser */
+    .rotating-phrases {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        white-space: nowrap;
+        /* Empêche le retour à la ligne */
+    }
+
+    /* Chaque bloc de phrase est en inline-block et ne se casse pas */
+    .phrase-block {
+        display: inline-block;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* Les éléments de la phrase (conteneurs et mots) restent sur une seule ligne */
+    .phrase,
+    .word {
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    /* Assurez-vous que seul le bloc actif s'affiche */
+    .phrase-block.active {
+        display: inline;
+    }
+
+    /* Adaptation du paragraphe */
+    .hero p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        padding: 0 1rem;
+    }
+
+    /* Adaptation du bouton */
+    .hero .btn {
+        font-size: clamp(0.8rem, 4vw, 1rem);
+        padding: 0.5rem 1.5rem;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Partie client */
+
+.clients-section {
+    background-color: #ffffff;
+    /* Fond blanc */
+    border-top-left-radius: 50px;
+    /* Arrondi en haut à gauche */
+    border-top-right-radius: 50px;
+    /* Arrondi en haut à droite */
+    margin-top: -50px;
+    /* Superposition avec la section hero */
+    padding: 2rem 1rem;
+    /* Espacement interne */
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+    /* Optionnel : ombre pour un effet plus esthétique */
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.clients-section .tache-droite {
+    position: absolute;
+    right: 0%;
+}
+
+.clients-section .tache-gauche {
+    position: absolute;
+    left: 0%;
+}
+
+.clients-section .container {
+    text-align: center;
+    /* Centrer le contenu */
+}
+
+.clients-section .section-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    /* Ajuste l'espacement entre le titre et l'image */
+    position: relative;
+}
+
+.clients-section .underline {
+    display: block;
+    margin: -10px auto 0;
+    /* Centre le soulignement et ajuste l'espacement */
+    width: clamp(200px, 50vw, 350px);
+    /* La largeur s'adapte entre 200px et 350px selon l'écran */
+    height: 40px;
+    /* Ajustez cette valeur en fonction de la hauteur souhaitée pour votre soulignement */
+    background: url('../soulignement.svg') no-repeat center/contain;
+}
+
+.clients-section .clients-logos img {
+    max-width: 300px;
+    /* Taille maximale des logos */
+    margin: 0 3rem;
+    /* Espacement entre les logos */
+    transition: transform 0.3s ease;
+    /* Animation pour le hover */
+}
+
+.clients-section .clients-logos img:hover {
+    transform: scale(1.1);
+    /* Grossissement au survol */
+}
+
+/* Ajustements pour mobile */
+@media only screen and (max-width: 768px) {
+
+    /* Forcer le titre à rester sur une seule ligne */
+    .clients-section .section-title {
+        white-space: nowrap;
+        overflow: hidden;
+        /* Masque le dépassement si le titre est trop long */
+        text-overflow: ellipsis;
+        /* Ajoute des points de suspension en cas de dépassement */
+        font-size: clamp(2.5rem, 8vw, 3rem);
+        /* Ajustez la taille si besoin */
+    }
+
+    /* Ajuster le chevauchement sur mobile */
+    .clients-section {
+        margin-top: -20px;
+        /* Réduit le chevauchement pour éviter de masquer le contenu du hero */
+        border-top-left-radius: 20px;
+        /* Optionnel, on peut réduire l'arrondi pour un meilleur rendu sur petit écran */
+        border-top-right-radius: 20px;
+    }
+
+    /* Carrousel pour les logos */
+    .clients-section .clients-logos {
+        display: flex;
+        overflow-x: auto;
+        /* Permet le défilement horizontal */
+        scroll-snap-type: x mandatory;
+        /* Active le scroll snapping */
+        -webkit-overflow-scrolling: touch;
+        /* Pour un défilement fluide sur iOS */
+        gap: 1rem;
+        padding: 0 1rem;
+        /* Ajoute un padding pour le confort */
+    }
+
+    .clients-section .clients-logos img {
+        flex: 0 0 100%;
+        /* Chaque logo occupe 100% de la largeur du conteneur */
+        scroll-snap-align: center;
+        /* Centrage lors du scroll snapping */
+        max-width: 100%;
+        /* Annule la limite précédente */
+        object-fit: contain;
+        /* Conserve les proportions de l'image */
+        margin: 0;
+        /* Réinitialise les marges */
+    }
+
+    /* Redimensionnement des tâches pour qu'elles apparaissent */
+    .clients-section .tache-droite,
+    .clients-section .tache-gauche {
+        display: none;
+    }
+}
+
+/* Section Référencement */
+.referencement-section {
+    background-color: #ffffff;
+    /* Fond blanc */
+    text-align: left;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.referencement-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* S'assure que le contenu occupe tout l'écran */
+}
+
+.referencement-content,
+.referencement-image {
+    opacity: 0;
+    /* Le contenu est initialement masqué */
+    transform: translateY(30px);
+    /* Décalage vers le bas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    /* Transition fluide */
+}
+
+.referencement-content.fade-in,
+.referencement-image.fade-in {
+    opacity: 1;
+    /* Rend visible */
+    transform: translateY(0);
+    /* Ramène à la position normale */
+}
+
+.referencement-content {
+    max-width: 50%;
+    /* Ajuste la largeur */
+}
+
+.referencement-title {
+    font-size: var(--font-size-4xl);
+    font-weight: bold;
+    line-height: var(--line-height-tight);
+}
+
+.referencement-content p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    margin-bottom: 2rem;
+}
+
+.referencement-content .btn {
+    background-color: #043873;
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.referencement-content .btn:hover {
+    transform: scale(1.05);
+    background-color: #4F9CF9;
+    color: white;
+}
+
+.referencement-image {
+    max-width: 40%;
+}
+
+.referencement-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.referencement-content .underline {
+    display: block;
+    margin: -20px 0 20px;
+    /* Centre le soulignement et ajuste l'espacement */
+    width: clamp(250px, 50vw, 350px);
+    /* La largeur s'adapte entre 200px et 350px selon l'écran */
+    height: 40px;
+    /* Ajustez cette valeur en fonction de la hauteur souhaitée pour votre soulignement */
+    background: url('../soulignement-ref.svg') no-repeat center/contain;
+
+}
+
+/* Adaptation pour mobile */
+
+@media (max-width: 768px) {
+
+    .referencement-section {
+        padding: 1.2rem 2rem;
+    }
+
+    /* Passage en disposition verticale */
+    .referencement-section .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* Centrage du texte sur mobile */
+    }
+
+    /* Aligner à gauche uniquement le contenu textuel (paragraphes, texte en gras, listes) */
+    .referencement-content p,
+    .referencement-content b,
+    .referencement-content ul,
+    .referencement-content li {
+        text-align: left;
+    }
+
+    /* Les blocs occupent toute la largeur */
+    .referencement-content,
+    .referencement-image {
+        max-width: 100%;
+    }
+
+    /* Ajout d'un espacement entre le contenu textuel et l'image */
+    .referencement-image {
+        margin-top: 1.2rem;
+    }
+
+    .referencement-title {
+        white-space: nowrap;
+        overflow: hidden;
+        /* Masque le dépassement si le titre est trop long */
+        text-overflow: ellipsis;
+        /* Ajoute des points de suspension en cas de dépassement */
+        font-size: clamp(2.5rem, 8vw, 3rem);
+        /* Ajustez la taille si besoin */
+    }
+
+    .referencement-content .underline {
+        margin: -20px auto 20px;
+    }
+}
+
+/* Section Relation Client */
+.relation-client-section {
+    background-color: #ffffff;
+    /* Fond blanc */
+    text-align: left;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.relation-client-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* S'assure que le contenu occupe tout l'écran */
+}
+
+.relation-client-content,
+.relation-client-image {
+    opacity: 0;
+    /* Le contenu est initialement masqué */
+    transform: translateY(30px);
+    /* Décalage vers le bas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    /* Transition fluide */
+}
+
+.relation-client-content.fade-in,
+.relation-client-image.fade-in {
+    opacity: 1;
+    /* Rend visible */
+    transform: translateY(0);
+    /* Ramène à la position normale */
+}
+
+.relation-client-content {
+    max-width: 50%;
+    /* Ajuste la largeur */
+}
+
+.relation-client-title {
+    font-size: var(--font-size-4xl);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: var(--line-height-tight);
+
+}
+
+.relation-client-content p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    margin-bottom: 2rem;
+}
+
+.relation-client-content .btn {
+    background-color: #043873;
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.relation-client-content .btn:hover {
+    transform: scale(1.05);
+    background-color: #4F9CF9;
+    color: white;
+}
+
+.relation-client-image {
+    max-width: 40%;
+}
+
+.relation-client-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.relation-client-content .underline {
+    display: block;
+    margin: -25px 0 20px;
+    /* Centre le soulignement et ajuste l'espacement */
+    width: clamp(250px, 50vw, 350px);
+    /* La largeur s'adapte entre 200px et 350px selon l'écran */
+    height: 40px;
+    /* Ajustez cette valeur en fonction de la hauteur souhaitée pour votre soulignement */
+    background: url('../soulignement-ref.svg') no-repeat center/contain;
+
+}
+
+/* Adaptation pour mobile */
+
+@media (max-width: 768px) {
+
+    .relation-client-section {
+        padding: 1.2rem 2rem;
+    }
+
+    .relation-client-section .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Aligner à gauche uniquement le contenu textuel (paragraphes, texte en gras, listes) */
+    .relation-client-content p,
+    .relation-client-content b,
+    .relation-client-content ul,
+    .relation-client-content li {
+        text-align: left;
+    }
+
+    /* Les deux blocs occupent toute la largeur */
+    .relation-client-content,
+    .relation-client-image {
+        max-width: 100%;
+    }
+
+    /* Réordonner pour que le contenu (titre, texte, bouton) apparaisse avant l'image */
+    .relation-client-content {
+        order: 1;
+    }
+
+    .relation-client-image {
+        order: 2;
+        margin-top: 1.2rem;
+    }
+
+    /* Titre en mode mobile : plus gros et forcer l'affichage sur une seule ligne */
+    .relation-client-title {
+        white-space: nowrap;
+        overflow: hidden;
+        /* Masque le dépassement si le titre est trop long */
+        text-overflow: ellipsis;
+        /* Ajoute des points de suspension en cas de dépassement */
+        font-size: clamp(2.5rem, 8vw, 3rem);
+        /* Ajustez la taille si besoin */
+    }
+
+    .relation-client-content .underline {
+        margin: -25px auto 20px;
+    }
+
+}
+
+/* Section Site Web */
+.site-web-section {
+    background-color: #ffffff;
+    /* Fond blanc */
+    text-align: left;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.site-web-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* S'assure que le contenu occupe tout l'écran */
+    flex-direction: row;
+    /* Texte à gauche, image à droite */
+}
+
+.site-web-content,
+.site-web-image {
+    opacity: 0;
+    /* Initialement masqué */
+    transform: translateY(30px);
+    /* Décalage vers le bas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    /* Animation fluide */
+}
+
+.site-web-content.fade-in,
+.site-web-image.fade-in {
+    opacity: 1;
+    /* Rendu visible */
+    transform: translateY(0);
+    /* Position normale */
+}
+
+.site-web-content {
+    max-width: 50%;
+    /* Ajuste la largeur */
+}
+
+.site-web-title {
+    font-size: var(--font-size-4xl);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: var(--line-height-tight);
+}
+
+.underline-image-site {
+    width: 200px;
+    height: auto;
+    margin-bottom: -3px;
+    margin-top: -50px;
+}
+
+.site-web-content p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    margin-bottom: 2rem;
+}
+
+.site-web-content .btn {
+    background-color: #043873;
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.site-web-content .btn:hover {
+    transform: scale(1.05);
+    background-color: #4F9CF9;
+    color: white;
+}
+
+.site-web-image {
+    max-width: 40%;
+}
+
+.site-web-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Ajustement pour les mobile */
+
+@media (max-width: 768px) {
+
+    .site-web-section {
+        padding: 1.2rem 2rem;
+    }
+
+    /* Passage en disposition verticale */
+    .site-web-section .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* Centrage du texte sur mobile */
+    }
+
+    /* Aligner à gauche uniquement le contenu textuel (paragraphes, texte en gras, listes) */
+    .site-web-content p,
+    .site-web-content b,
+    .site-web-content ul,
+    .site-web-content li {
+        text-align: left;
+    }
+
+    /* Les blocs occupent toute la largeur */
+    .site-web-content,
+    .site-web-image {
+        max-width: 100%;
+    }
+
+    /* Ajout d'un espacement entre le contenu textuel et l'image */
+    .site-web-image {
+        margin-top: 1.2rem;
+    }
+}
+
+/* Section coupure */
+.coupure-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #043873;
+    text-align: center;
+    padding: 6rem 1rem;
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.coupure-section .coupure-tache-droite {
+    position: absolute;
+    right: 0%;
+    bottom: -14%;
+}
+
+.coupure-section .coupure-tache-gauche {
+    position: absolute;
+    left: 0%;
+    bottom: 15%;
+}
+
+/* Conteneur pour le texte */
+.coupure-section .content-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Texte de la section */
+.coupure-section .section-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    z-index: 2;
+    white-space: nowrap;
+    /* Le texte reste sur une seule ligne */
+}
+
+/* Positionnement du soulignement via le pseudo-élément */
+.coupure-section .highlight {
+    position: relative;
+}
+
+.coupure-section .highlight::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.3em;
+    /* Ajustez cet espace selon vos besoins */
+    transform: translateX(-50%);
+    width: 100%;
+    height: 0.3em;
+    /* Épaisseur du trait */
+    background: url("../soulignement-ref.svg") no-repeat center/contain;
+    z-index: -1;
+}
+
+/* Bouton principal */
+.coupure-section .btn-primary {
+    display: inline-block;
+    background-color: white;
+    color: #043873;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1em;
+    width: 12.5em;
+}
+
+.coupure-section .btn-primary:hover {
+    background-color: #4F9CF9;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Media Query pour écrans plus petits */
+@media (max-width: 768px) {
+    .coupure-section {
+        padding: 4rem 1rem;
+    }
+
+    .coupure-section .section-text {
+        /* Ajustement responsive de la taille du texte pour qu'il tienne sur une seule ligne */
+        font-size: clamp(1rem, 7vw, 2.5rem);
+        white-space: nowrap;
+    }
+
+    /* Centrage du bouton */
+    .coupure-section .btn-primary {
+        display: block;
+        margin: 1em auto 0;
+        z-index: 1;
+    }
+
+    .coupure-section .coupure-tache-droite {
+        position: absolute;
+        right: -15%;
+        bottom: -25%;
+    }
+
+    .coupure-section .coupure-tache-gauche {
+        position: absolute;
+        left: -15%;
+        bottom: 25%;
+    }
+}
+
+/* Section commentaire */
+
+/* Section globale et titre */
+.commentaire-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    flex-direction: column;
+    background-color: white;
+    z-index: 1;
+}
+
+.commentaire-titre {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.commentaire-titre h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.commentaire-titre h2 span {
+    color: #043873;
+}
+
+/* Wrapper externe pour Swiper, pagination et flèches */
+.swiper-container-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Conteneur principal Swiper */
+.carroussel-container {
+    width: 100%;
+}
+
+/* Swiper wrapper et slides */
+.swiper-wrapper {
+    /* Aucun style particulier nécessaire */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===================================== */
+/* Style des cartes en mode Desktop */
+/* ===================================== */
+.carte {
+    display: grid;
+    grid-template-rows: 250px 2px 120px;
+    height: 372px;
+    box-sizing: border-box;
+    user-select: none;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.carte:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Zone supérieure : contenu principal avec scroll si nécessaire */
+.commentaire-container {
+    grid-row: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+.image-guillement {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.carte:hover .image-guillement {
+    opacity: 1;
+}
+
+.commentaire {
+    width: 100%;
+    font-size: var(--font-size-lg);
+    text-align: center;
+    line-height: var(--line-height-base);
+    margin-top: 25px;
+    padding: 0 10px;
+    color: #333;
+    font-weight: 400;
+}
+
+/* Séparateur : position fixe */
+.separateur {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.carte:hover .separateur {
+    width: 90%;
+}
+
+/* Zone inférieure : infos auteur */
+.info-auteur {
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.info-auteur img {
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.carte:hover .info-auteur img {
+    transform: scale(1.05);
+}
+
+.details-auteur {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 10px;
+}
+
+.nom {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    margin: 0;
+    color: #043873;
+    transition: color 0.3s ease;
+}
+
+.carte:hover .nom {
+    color: #4F9CF9;
+}
+
+.fonction {
+    font-size: var(--font-size-base);
+    color: #666;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.carte:hover .fonction {
+    color: #888;
+}
+
+/* ===================================== */
+/* Pagination (hors du conteneur Swiper) */
+.swiper-pagination {
+    position: relative;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    background: #043873;
+    height: 12px;
+    width: 12px;
+    opacity: 0.5;
+    display: inline-block;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+    background: #4F9CF9;
+}
+
+/* ===================================== */
+/* Boutons de navigation (hors du conteneur Swiper) */
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #4F9CF9;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 20px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    color: #043873;
+    background: #f5f5f5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================== */
+/* Responsive - ajustement pour mobile */
+/* ===================================== */
+@media (max-width: 620px) {
+    .commentaire-titre h2 {
+        font-size: 2rem;
+    }
+
+    .carte {
+        grid-template-rows: 200px 2px 80px;
+        height: 282px;
+        padding: 0;
+    }
+
+    .commentaire-container {
+        grid-row: 1;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    .info-auteur {
+        padding: 10px;
+    }
+}
+
+/* Section Contact */
+.contact-section {
+    background-color: #043873;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    z-index: 1;
+}
+
+.contact-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Groupe pour les champs nom et prénom */
+.contact-form .form-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.contact-form .form-group input {
+    width: calc(50% - 0.5rem);
+    /* Deux champs de taille égale pour occuper la même largeur */
+}
+
+/* Champs de texte */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #042c5e;
+}
+
+/* Bouton principal */
+.contact-form button {
+    display: inline-block;
+    background-color: white;
+    color: #043873;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    background-color: #4F9CF9;
+    color: white;
+}
+
+/* Footer */
+
+.footer-section {
+    background-color: #043873;
+    color: white;
+    padding: 2rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    z-index: 1;
+}
+
+.footer-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section .footer-logo img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.footer-section .footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section .footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section .footer-links a {
+    color: #4F9CF9;
+    text-decoration: none;
+}
+
+.footer-section .footer-links a:hover {
+    color: white;
+}
+
+.footer-section .btn-footer {
+    display: inline-block;
+    background-color: white;
+    color: #043873;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.footer-section .btn-footer:hover {
+    background-color: #4F9CF9;
+    color: white;
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotating-phrases {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.phrase-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.phrase-block.active {
+    position: relative;
+    opacity: 1;
+}
+
+.word {
+    display: inline-block;
+    overflow: hidden;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+        opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.active .word {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Délais d'animation pour chaque mot */
+.active .word:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.active .word:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.active .word:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.active .word:nth-child(4) {
+    transition-delay: 0.55s;
+}
+
+*:focus {
+    outline: 3px solid #4F9CF9;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Section Mentions Légales */
+.mentions-legales {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    margin-top: -50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.mentions-legales section {
+    margin-bottom: 3rem;
+}
+
+.mentions-legales h2 {
+    color: #043873;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.mentions-legales p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.mentions-legales strong {
+    color: #043873;
+}
+
+.mentions-legales a {
+    color: #4F9CF9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mentions-legales a:hover {
+    color: #043873;
+}
+
+@media (max-width: 768px) {
+    .mentions-legales {
+        margin-top: -20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 2rem 1rem;
+    }
+
+    .mentions-legales h2 {
+        font-size: 1.5rem;
+    }
+
+    .mentions-legales p {
+        font-size: 1rem;
+    }
+}
+
+/* Style du menu burger */
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
